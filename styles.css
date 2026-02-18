@@ -1,3 +1,53 @@
+/* Gallery Section Styles */
+.gallery-container {
+    width: 100%;
+    padding: 32px 0;
+}
+
+.gallery-container .section-title {
+    text-align: center;
+    margin-bottom: 24px;
+    font-size: 2rem;
+    color: #fff;
+    letter-spacing: 2px;
+}
+
+.gallery-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+}
+
+.gallery-item {
+    background: #181c24;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 320px;
+    margin-bottom: 12px;
+}
+
+.gallery-item img,
+.gallery-item video {
+    max-width: 100%;
+    max-height: 200px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    background: #222;
+}
+
+.gallery-caption {
+    color: #b0b0b0;
+    font-size: 1rem;
+    text-align: center;
+    margin-top: 4px;
+    word-break: break-all;
+}
+
 :root {
     --bg-color: #0d1117;
     --sidebar-bg: #0d1117;
@@ -107,7 +157,7 @@ ul {
 
 /* Video Background */
 #bg-video {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -745,6 +795,7 @@ ul {
     /* Cyan outline */
     background: none;
     -webkit-background-clip: unset;
+    background-clip: unset;
     -webkit-text-fill-color: transparent;
     margin-bottom: 1rem;
     letter-spacing: 4px;
@@ -1281,40 +1332,185 @@ ul {
         grid-template-columns: 1fr;
         padding: 0 1rem;
     }
+
+    .help-desk-categories {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
 }
 
-/* Contact Section */
+/* Professional Help Desk Redesign */
 .contact-container {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 1.5rem 2rem 8rem 2rem;
+    /* Reduced top padding */
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin-top: 2rem;
-    padding-bottom: 4rem;
+}
+
+.help-desk-header {
+    width: 100%;
+    margin-bottom: 2rem;
+    /* Reduced margin */
+    border-bottom: 1px solid rgba(88, 166, 255, 0.2);
+    padding-bottom: 0.6rem;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.help-desk-title {
+    font-size: 1.6rem;
+    /* Slightly smaller title */
+    font-weight: 300;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    position: relative;
+    padding-left: 15px;
+    border-left: 3px solid var(--accent-color);
+}
+
+.help-desk-categories {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    /* Slightly reduced gap */
+    width: 100%;
+}
+
+.contact-category {
+    display: flex;
+    flex-direction: column;
+}
+
+.category-title {
+    font-size: 0.9rem !important;
+    /* Slightly smaller */
+    font-weight: 700;
+    color: var(--accent-color);
+    margin-bottom: 1rem !important;
+    /* Reduced margin */
+    letter-spacing: 2px;
+    opacity: 0.8;
+    text-transform: uppercase;
 }
 
 .contact-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 3rem;
-    width: 100%;
-    justify-items: center;
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+    /* Reduced gap between cards */
 }
 
 .contact-card {
-    align-items: center;
-    text-align: center;
-    min-height: 300px;
-    padding: 2rem;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    padding: 1rem;
+    /* Compact padding */
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.contact-card:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(88, 166, 255, 0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+}
+
+.contact-card .cp-title {
+    font-size: 1rem;
+    /* Slightly smaller name */
+    margin-bottom: 0.2rem;
+    /* Reduced margin */
+    font-weight: 600;
 }
 
 .contact-role {
-    color: #58a6ff;
-    font-size: 1.1rem;
+    color: #8b949e;
+    font-size: 0.75rem;
+    /* Smaller role text */
+    margin-bottom: 0.8rem;
+    /* Pull button closer */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Sponsors Section */
+.sponsors-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sponsors-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    justify-content: center;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.sponsor-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 2.5rem;
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.sponsor-card:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(88, 166, 255, 0.4);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.sponsor-logo-placeholder {
+    width: 80px;
+    height: 80px;
+    background: rgba(88, 166, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-bottom: 1.5rem;
+    color: var(--accent-color);
+    font-size: 2rem;
+    border: 1px solid rgba(88, 166, 255, 0.2);
+}
+
+.sponsor-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+}
+
+.sponsor-tier {
+    color: var(--accent-color);
+    font-size: 0.8rem;
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2px;
+    opacity: 0.8;
 }
 
 .contact-desc {
@@ -1326,30 +1522,26 @@ ul {
 .contact-btn {
     display: inline-flex;
     align-items: center;
-    gap: 0.8rem;
-    background: transparent;
-    color: #fff;
-    border: 1px solid #58a6ff;
-    padding: 0.8rem 2rem;
-    font-family: 'Orbitron', sans-serif;
-    font-size: 1.2rem;
-    cursor: pointer;
-    text-decoration: none;
+    gap: 10px;
+    background: rgba(88, 166, 255, 0.1);
+    color: var(--accent-color);
+    border: 1px solid rgba(88, 166, 255, 0.3);
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: 4px;
     transition: all 0.3s ease;
-    text-shadow: 0 0 5px rgba(88, 166, 255, 0.5);
-    box-shadow: 0 0 10px rgba(88, 166, 255, 0.2), inset 0 0 10px rgba(88, 166, 255, 0.1);
-    position: relative;
-    overflow: hidden;
 }
 
 .contact-btn:hover {
-    background: rgba(88, 166, 255, 0.2);
-    box-shadow: 0 0 20px rgba(88, 166, 255, 0.6), inset 0 0 20px rgba(88, 166, 255, 0.2);
+    background: var(--accent-color);
+    color: #fff;
+    box-shadow: 0 0 15px rgba(88, 166, 255, 0.4);
     transform: translateY(-2px);
 }
 
 .contact-btn i {
-    font-size: 1.1rem;
+    font-size: 0.9rem;
 }
 
 /* --- Explore Side Drawer --- */
