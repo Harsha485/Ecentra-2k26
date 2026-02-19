@@ -738,6 +738,11 @@ ul {
     filter: drop-shadow(0 0 10px rgba(88, 166, 255, 0.5));
 }
 
+/* Mobile-only Ecentra logo - hidden on desktop, shown on mobile */
+.ecentra-logo-mobile {
+    display: none;
+}
+
 .pro-dashboard-card {
     background: rgba(13, 17, 23, 0.3);
     /* Higher transparency */
@@ -1277,15 +1282,9 @@ ul {
         order: 2;
     }
 
-    /* Move Ecentra logo to fixed top-left on mobile */
+    /* Hide the Ecentra logo inside the bottom nav bar so HOME stays visible */
     .sidebar-left .ecentra-logo {
-        position: fixed;
-        top: 10px;
-        left: 10px;
-        width: 45px;
-        height: auto;
-        z-index: 9998;
-        margin-bottom: 0;
+        display: none;
     }
 
     .sidebar-item {
@@ -1351,6 +1350,20 @@ ul {
         width: 50px;
         z-index: 9998;
         border-width: 1px;
+    }
+
+    /* --- Ecentra Logo (top-left): Matches college logo height --- */
+    .ecentra-logo-mobile {
+        display: block;
+        position: fixed;
+        top: 12px;
+        left: 12px;
+        width: 50px;
+        height: auto;
+        z-index: 9998;
+        border-radius: 50%;
+        border: 2px solid rgba(255, 255, 255, 0.1);
+        filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
     }
 
     /* --- Hero Section: Responsive sizing --- */
