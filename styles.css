@@ -450,7 +450,7 @@ ul {
     justify-content: center;
     /* Center links */
     align-items: center;
-    padding: 1.5rem 3rem;
+    padding: 0;
     font-size: 0.9rem;
     font-weight: 500;
     position: relative;
@@ -1285,7 +1285,16 @@ ul {
 .event-details strong {
     color: #e6e6e6;
 }
+/* Center hero buttons below ECENTRA box */
+.hero-nav {
+    margin-top: 30px;
+}
 
+.hero-nav .nav-links {
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
 /* ========================================
    MOBILE RESPONSIVENESS (max-width: 900px)
    ======================================== */
@@ -1377,7 +1386,14 @@ ul {
         display: flex;
         gap: 1.5rem;
     }
+/* Mobile hero buttons adjustment */
+.hero-nav {
+    margin-top: 15px;
+}
 
+.hero-nav .nav-links {
+    gap: 1.2rem;
+}
     .nav-links li a {
         font-size: 0.85rem;
         letter-spacing: 1px;
@@ -1417,6 +1433,7 @@ ul {
         min-height: 80vh;
         padding-top: 20px;
         padding-bottom: 2rem;
+        margin-top: 30px;
     }
 
     .pro-dashboard-card {
