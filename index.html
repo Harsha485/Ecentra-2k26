@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/turn.js/3/turn.min.js"></script>
 </head>
 
 <body>
@@ -41,7 +43,11 @@
                 <i class="fas fa-handshake"></i>
                 <span>SPONSORS</span>
             </a>
-
+            <a href="#magazine" class="sidebar-item" onclick="showSection('magazine')">
+                <i class="fas fa-newspaper"></i>
+                <span>Magazine</span>
+            </a>
+            
         </aside>
 
         <!-- Main Content Area -->
@@ -1301,7 +1307,55 @@
                         </div>
                     </div>
                 </div>
+            <!-- Magazine Section -->
 
+<div class="magazine-container" id="magazine-section" style="display:none;">
+
+<h2 class="section-title">MAGAZINE</h2>
+
+<div class="workshops-grid">
+
+<div class="cyberpunk-card">
+
+<div class="cp-decoration-top-left"></div>
+<div class="cp-decoration-bottom-right"></div>
+
+<div class="cp-sidebar">
+<span>MAG</span>
+</div>
+
+<div class="cp-main">
+
+<h3 class="cp-title">ECENTRA 2K26 MAGAZINE</h3>
+
+<div class="cp-image-border">
+<div class="cp-image-container">
+<img src="Images/magazine cover.png" alt="Magazine Cover">
+</div>
+</div>
+
+<div class="cp-actions">
+
+<a href="magazine/magazine.html" target="_blank" class="cp-btn register">
+OPEN MAGAZINE
+</a>
+
+</div>
+
+<div class="cp-footer">
+<div class="cp-price-group">
+
+<span class="price-label">DIGITAL EDITION</span>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+
+</div>  
                 <!-- About Section -->
                 <div class="about-container" id="about-section" style="display: none;">
                     <h2 class="section-title">ABOUT US</h2>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="UTF-8">
+<title>ECENTRA Magazine</title>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/turn.js/3/turn.min.js"></script>
+
+<style>
+
+body{
+margin:0;
+background:#0d1117;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+height:100vh;
+color:white;
+font-family:Arial;
+}
+
+#book{
+width:900px;
+height:600px;
+}
+
+#book div{
+width:100%;
+height:100%;
+}
+
+#book img{
+width:100%;
+height:100%;
+object-fit:contain;
+background:black;
+}
+
+.controls{
+margin-top:20px;
+}
+
+button{
+padding:10px 20px;
+margin:5px;
+border:none;
+background:#58a6ff;
+color:white;
+cursor:pointer;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h2>ECENTRA 2K26 MAGAZINE</h2>
+
+<div id="book"></div>
+
+<div class="controls">
+<button onclick="prevPage()">Previous</button>
+<button onclick="nextPage()">Next</button>
+</div>
+
+<script>
+
+const totalPages = 74;
+
+const book = document.getElementById("book");
+
+for(let i=1;i<=totalPages;i++){
+
+let page = document.createElement("div");
+
+page.innerHTML = `<img src="pages/page${i}.jpg">`;
+
+book.appendChild(page);
+
+}
+
+$("#book").turn({
+width:900,
+height:600,
+autoCenter:true,
+gradients:true,
+elevation:50
+});
+
+function nextPage(){
+$("#book").turn("next");
+}
+
+function prevPage(){
+$("#book").turn("previous");
+}
+
+</script>
+
+</body>
+</html>
