@@ -1818,6 +1818,19 @@ ul {
     letter-spacing: 2px;
     opacity: 0.8;
 }
+.sponsor-logo {
+    width: 120px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.sponsor-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;}
 
 .contact-desc {
     color: #8b949e;
