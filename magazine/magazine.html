@@ -23,8 +23,13 @@ font-family:Arial;
 }
 
 #book{
-width:900px;
-height:600px;
+width:90vw;
+height:65vh;
+max-width:900px;
+max-height:600px;
+box-shadow:0 25px 60px rgba(0,0,0,0.8);
+border-radius:8px;
+overflow:hidden;
 }
 
 #book div{
@@ -52,54 +57,22 @@ color:white;
 cursor:pointer;
 }
 
+@media (max-width:768px){
+
+#book{
+width:95vw;
+height:70vh;
+}
+
+button{
+padding:8px 12px;
+font-size:12px;
+}
+
+h2{
+font-size:16px;
+}
+
+}
+
 </style>
-
-</head>
-
-<body>
-
-<h2>ECENTRA 2K26 MAGAZINE</h2>
-
-<div id="book"></div>
-
-<div class="controls">
-<button onclick="prevPage()">Previous</button>
-<button onclick="nextPage()">Next</button>
-</div>
-
-<script>
-
-const totalPages = 74;
-
-const book = document.getElementById("book");
-
-for(let i=1;i<=totalPages;i++){
-
-let page = document.createElement("div");
-
-page.innerHTML = `<img src="pages/page${i}.jpg">`;
-
-book.appendChild(page);
-
-}
-
-$("#book").turn({
-width:900,
-height:600,
-autoCenter:true,
-gradients:true,
-elevation:50
-});
-
-function nextPage(){
-$("#book").turn("next");
-}
-
-function prevPage(){
-$("#book").turn("previous");
-}
-
-</script>
-
-</body>
-</html>
