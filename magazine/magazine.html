@@ -6,6 +6,7 @@
 <title>ECENTRA Magazine</title>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- use CDN for turn.js; local file is empty -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/turn.js/3/turn.min.js"></script>
 
 <style>
@@ -76,3 +77,47 @@ font-size:16px;
 }
 
 </style>
+</head>
+<body>
+    <div id="book"></div>
+    <div class="controls">
+        <button id="prev">Previous</button>
+        <button id="next">Next</button>
+    </div>
+
+    <script>
+        // initialize the flipbook when DOM is ready
+        $(document).ready(function() {
+                var $book = $("#book");
+            var totalPages = 74; // match number of files in pages/
+
+            // add all page elements before turning
+            for (var i = 1; i <= totalPages; i++) {
+                $book.append(
+                    '<div><img src="pages/page' + i + '.jpg" alt="Page ' + i + '"/></div>'
+                );
+            }
+            console.log('appended', $book.children().length, 'pages');
+
+            // initialize the flipbook container after pages exist
+            if (typeof $book.turn === 'function') {
+                $book.turn({
+                    width: '100%',
+                    height: '100%',
+                    autoCenter: true
+                });
+            } else {
+                console.error('turn.js not available');
+            }
+
+            // controls
+            $('#prev').on('click', function() {
+                $book.turn('previous');
+            });
+            $('#next').on('click', function() {
+                $book.turn('next');
+            });
+        });
+    </script>
+</body>
+</html>
