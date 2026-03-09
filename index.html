@@ -1394,6 +1394,7 @@ OPEN MAGAZINE
             const eventsSection = document.getElementById('events-section');
             const contactSection = document.getElementById('contact-section');
             const sponsorsSection = document.getElementById('sponsors-section');
+            const magazineSection = document.getElementById('magazine-section');
 
             if (homeSection) homeSection.style.display = 'none';
             if (aboutSection) aboutSection.style.display = 'none';
@@ -1402,12 +1403,16 @@ OPEN MAGAZINE
             if (eventsSection) eventsSection.style.display = 'none';
             if (contactSection) contactSection.style.display = 'none';
             if (sponsorsSection) sponsorsSection.style.display = 'none';
+            if (magazineSection) magazineSection.style.display = 'none';
 
             // Show the selected section
             if (sectionId === 'workshops') {
                 // Show both regular and combo workshops
                 if (workshopsSection) workshopsSection.style.display = 'flex';
                 if (comboWorkshopsSection) comboWorkshopsSection.style.display = 'flex';
+            } else if (sectionId === 'magazine') {
+                // Only reveal magazine
+                if (magazineSection) magazineSection.style.display = 'block';
             } else {
                 const sectionToShow = document.getElementById(sectionId + '-section');
                 if (sectionToShow) {
